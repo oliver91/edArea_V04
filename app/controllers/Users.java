@@ -180,7 +180,6 @@ public class Users extends Controller
     public static Result confirmRemoveFriend() {
         Form<SelectFriend> sel_form = Form.form(SelectFriend.class).bindFromRequest();
         String email = sel_form.get().email;
-
         Friends.find.where().and(Expr.like("friend_email", "%"+email+"%"), Expr.like("user_email", "%"+request().username()+"%")).findUnique().delete();
 
         Notification.find.where().like("email_from", "%"+email+"%").findUnique().delete();
