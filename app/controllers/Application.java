@@ -63,8 +63,13 @@ public class Application extends Controller
     {
         Form<Registration> reg_form = Form.form(Registration.class).bindFromRequest();
 
-        new User(reg_form.get().email, reg_form.get().name,reg_form.get().userType, reg_form.get().password,
-                reg_form.get().birthDate, reg_form.get().country, reg_form.get().city,
+        new User(reg_form.get().email,
+                reg_form.get().name,
+                reg_form.get().userType,
+                reg_form.get().password,
+                reg_form.get().country,
+                reg_form.get().birthDate,
+                reg_form.get().city,
                 User.find.where().findRowCount()+1).save();
 
 
