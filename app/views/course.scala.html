@@ -1,0 +1,25 @@
+@(user: User, course: Course)
+
+    @main(user) {
+
+        <div class="course">
+
+            <dl id="user">
+                <dt>@user.name <span>(@user.email)</span></dt>
+                <dd>
+                    <a href="@routes.Application.logout()">Logout</a>
+                </dd>
+            </dl>
+        </div>
+        <h1>@course.courseName</h1>
+
+        <h1>@course.logoPath</h1>
+        <img src="@routes.Assets.at(course.logoPath)" width="30%" height="30%" alt="лого">
+        <div>Science: @course.science</div>
+        <div>About course:<br>@course.aboutCourse</div>
+
+        <br>
+        <dd>
+            <a href="@routes.Courses.showCourses()">Back</a>
+        </dd>
+    }
