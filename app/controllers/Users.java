@@ -37,7 +37,7 @@ public class Users extends Controller
     }
 
     public static boolean isOnline(int id) {   // проверка на онлайн
-        Date currentDate = java.util.Calendar.getInstance().getTime();;
+        Date currentDate = java.util.Calendar.getInstance().getTime();
         User user = User.find.where().like("id", "%"+id+"%").findUnique();
 
 
